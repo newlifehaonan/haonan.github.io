@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Images"
+title: "How to Initiate, add and delete file using git command"
 date: 2017-11-22 16:25:06
-description: basic git command.
+description: Basic git command.
 ---
 
 #initiate a new repository
