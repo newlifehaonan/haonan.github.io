@@ -7,10 +7,10 @@ description: Basic git command.
 ---
 
 # initiate a new repository
-* Create a new repository on remote without initalize README.md file 
+* Create a new repository on remote without initalize README.md file
 * `mkdir /address/your-local-repfile-name` : must has the same name as the remote repository.
 * `cd your-local-repfile-name `
-* `touch readme.md'
+* `touch readme.md`
 * `git init`
 * `git add.`
 * `git status`
@@ -23,7 +23,7 @@ description: Basic git command.
 # add file and sychronize local to remote
 * `git add <filename>`
 * `git status`
-* `git commit --m "log"
+* `git commit --m "log"`
 * `git push`
 
 # delete file and sychronize to remote
@@ -32,4 +32,3 @@ description: Basic git command.
 * `git status`
 * `git commit --m "log"`
 * `git push`
-
