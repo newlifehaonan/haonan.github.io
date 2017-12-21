@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Collection of Sort Algorithm"
+date: 2017-11-22 16:25:06
+tag: Java algorithm Sort
+description: Sort algorithm
+---
 # Sort-Algorithm
 <hr />
 
@@ -20,7 +27,52 @@
 
 _Start with the first item in Array, compare each of them to the rest of item in the array_
 
+```java
+public class selection {
 
+	  private static void swap(ArrayList<Integer> input,int i, int j) {
+		  Integer temp;
+		  temp = input.get(i);
+		  input.set(i, input.get(j));
+		  input.set(j, temp)	;
+	  }
+
+	  private static boolean less(ArrayList<Integer> input,int i, int j) {
+		  if(input.get(i).compareTo(input.get(j))<0) return true;
+		  else
+			  return false;
+	  }
+
+	  public static void sort(ArrayList<Integer> input) {
+		  for(int i = 0; i < input.size(); i++) {
+			  for(int j = i; j < input.size(); j++) {
+				  if(less(input,j,i)) {
+					  swap(input,i,j);
+				  }
+			  }
+		  }
+	  }
+
+	  public static void main(String[] args) {
+		  ArrayList<Integer> input = new ArrayList<Integer>();
+
+		  for(int i =0; i < 50; i++) {
+			  input.add(StdRandom.uniform(100));
+		  }
+
+		  StdOut.println("Before Sort" + input);
+
+		  long start = System.currentTimeMillis();
+		  sort(input);
+		  long end = System.currentTimeMillis();
+		  long cost = (end -start);
+
+		  StdOut.println("After Sort" + input);
+		  StdOut.println(cost);
+	  }
+}
+
+```
 
 **2. Bubble-Sort<a id ='Selection-sort'></a>**
 
