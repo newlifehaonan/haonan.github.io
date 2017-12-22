@@ -2,7 +2,10 @@
 layout: post
 title: "Collection of Sort Algorithm"
 date: 2017-11-22 16:25:06
-tag: Java algorithm Sort
+tag:
+- Java
+- algorithm
+- sort
 description: Sort algorithm
 ---
 # Sort-Algorithm
