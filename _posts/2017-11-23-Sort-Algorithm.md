@@ -30,7 +30,7 @@ _Start with the first item in Array, compare each of them to the rest of item in
 ```java
 public class selection {
 
-	  private static void swap(ArrayList<Integer> input,int i, int j) {
+	  private static void swap(ArrayList<Integer> input,int i, int j){
 		  Integer temp;
 		  temp = input.get(i);
 		  input.set(i, input.get(j));
