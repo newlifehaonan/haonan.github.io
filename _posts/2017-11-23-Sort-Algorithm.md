@@ -7,11 +7,12 @@ tag:
 - algorithm
 - sort
 description: Sort algorithm
+comments: true
 ---
 # Sort-Algorithm
 <hr />
 
-##Appendix
+## Appendix
 **(All sort algorithm are build in java environment)**
 
 * [Elementary Sort](#Elementary-sort)
@@ -25,7 +26,7 @@ description: Sort algorithm
 
 <hr />
 
-##Elementary-Sort<a id ='Elementary-sort'></a>
+## Elementary-Sort<a id ='Elementary-sort'></a>
 **1. Selection-Sort<a id ='Bubble-sort'></a>**
 
 _Start with the first item in Array, compare each of them to the rest of item in the array_
@@ -91,7 +92,7 @@ _split the array into different size, apply Insertion-sort in each array until t
 
 <hr />
 
-##Heap-Sort<a id ='Heap-sort'></a>
+## Heap-Sort<a id ='Heap-sort'></a>
 
 _Heap structure is a data structure that each node are linked with the other two nodes, and each parent node needs to be either larger or smaller than its child nodes._
 
@@ -103,14 +104,14 @@ _Heap structure is a data structure that each node are linked with the other two
 
 <hr />
 
-##Merge-Sort<a id ='Merge-sort'></a>
+## Merge-Sort<a id ='Merge-sort'></a>
 **1. Divide**
 
 **2. Conquer**
 
 <hr />
 
-##Quick-Sort<a id ='Quick-sort'></a>
+## Quick-Sort<a id ='Quick-sort'></a>
 **1. Divide**
 
 **2. Conquer**
