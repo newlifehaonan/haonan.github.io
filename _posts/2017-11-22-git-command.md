@@ -2,7 +2,7 @@
 layout: post
 title: "How to Initiate, add and delete file using git command"
 date: 2017-11-22 16:25:06
-tag: Linux
+tag: git
 description: Basic git command.
 comments: true
 ---
