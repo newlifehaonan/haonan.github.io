@@ -3,7 +3,7 @@ layout: post
 title: "How to replace Github-page with custom domain"
 date: 2017-12-26 2:06:00
 tag:
-- Git
+- git
 description: Github pages
 comments: true
 ---
