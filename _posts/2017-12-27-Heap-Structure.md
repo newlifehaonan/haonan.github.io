@@ -26,15 +26,15 @@ comments: true
 
 <hr />
 
-## <p name = "Defination"><p/>Binary-Heap Defination
+## <p name = "Defination">Binary-Heap Defination<p/>
 
 **_Binary Heap is a structure within which the order of items are following the pattern that each item as a node should have at most two child nodes and its parent node should always be either greater or smaller than itself. If greater, the heap is called Max Priority Queue, same, if smaller, the heap is called Min Priority Queue_**
 
 <hr />
 
-## <p name = "Type"><p/>Type of Heap
+## <p name = "Type">Type of Heap<p/>
 
-### <p name = "Type"><p/>1. MaxPQ
+### <p name = "Type">1. MaxPQ<p/>
 
 Application interface includes:
 * Constructor
@@ -62,6 +62,7 @@ Application interface includes:
   * `swim(int v)`:move up PQ[v] to the correct position.
 
   * `sink(int v)`:move down PQ[v] to the correct position.
+
 ``` java
 public class MaxPQ<Key extends comparable<? super Key>>{
   private  Key[] PQ;
@@ -135,7 +136,8 @@ public class MaxPQ<Key extends comparable<? super Key>>{
   }
 }
 ```
-### <p name = "MinPQ"><p/>2.MinPQ
+
+### <p name = "MinPQ">2.MinPQ<p/>
 
 * Constructor
 
@@ -236,12 +238,14 @@ public class MinPQ<Key extends comparable<? super Key>>{
   }
 }
 ```
-## <p name = "Extension"><p/>Heap Structure Extension
 
-### <p name = "Multiway"><p/>1. Multiway Heap
+## <p name = "Extension">Heap Structure Extension<p/>
+
+### <p name = "Multiway">1. Multiway Heap<p/>
 **_unlike binary heap, multiway heap increase each node's child from two to any number you want.The main modification of the code lies in `swim` and `sink` functions, specifically the algebra relation between parent and child nodes. Following is implementation of d-way-heap_**
 
 **_There is a little trick in the implementation of d-way-heap, we can use the bottom-down truncation character in java when two integers divided result in float point, for example, 1/3 and 2/3 both equals 0_**
+
 ```java
 public class MinPQ<Key extends comparable<? super Key>>{
   private final int d; 			//Dimension of the heap
@@ -306,7 +310,8 @@ public class MinPQ<Key extends comparable<? super Key>>{
   }
 }
 ```
-### <p name = "Resized"><p/>2. Resized Heap
+
+### <p name = "Resized">2. Resized Heap<p/>
 **_The resized Heap is a heap with resizable capacity, which can increase the usage of memory_**
 ```java
 private void resize(int M){
@@ -339,7 +344,8 @@ public Key delmin(){
 }
 
 ```
-### <p name = "Index"><p/>3. Index Heap
+
+### <p name = "Index">3. Index Heap<p/>
 **_Put a sequence if items with each has its own unique index into a priority queue, this heap extension enable user to save related information of an item to another list for the future retrieval and manipulation, it's something like key and value pair, we compare the value not the key!_**
 
 * Constructor
