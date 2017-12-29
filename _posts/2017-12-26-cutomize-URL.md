@@ -47,3 +47,7 @@ comments: true
 *  [How to add a custom domain in Github Pages](https://www.youtube.com/watch?v=hUChaN-VRIc)
 
 * [DNS configuration](https://help.github.com/articles/troubleshooting-custom-domains/#dns-configuration-errors)
+
+<hr>
+
+_CopyRight &copy;Newlifehaonan.com_

@@ -1,12 +1,13 @@
 ---
 layout: post
-title: "Collection of Sort Algorithm"
+title: "4 Elementary Sort Algorithms"
 date: 2017-11-22 16:25:06
 tag:
 - Java
 - algorithm
 - sort
-description: Sort algorithm
+- data-structure
+description: Selection-Sort, Bubble-Sort,Insertion-Sort(Optimization), Shell-Sort
 comments: true
 ---
 # Sort-Algorithm
@@ -20,9 +21,6 @@ comments: true
   * [Selection-Sort](#Selection-sort)
   * [Insertion-Sort](#Insertion-sort)
   * [Shell-Sort](#Shell-sort)
-* [Heap sort](#Heap-sort)
-* [Merge sort](#Merge-sort)
-* [Quick sort](#Quick-sort)
 
 <hr />
 
@@ -315,26 +313,4 @@ private static <T extends Comparable<? super T>> void shell(T[] input) {
 ```
 <hr />
 
-## Heap-Sort<a id ='Heap-sort'></a>
-
-_Heap structure is a data structure that each node are linked with the other two nodes, and each parent node needs to be either larger or smaller than its child nodes._
-
-**1. Max-Priority-Queue**
-
-**2. Min-Priority-Queue**
-
-**3. Heap-base-Sort**
-
-<hr />
-
-## Merge-Sort<a id ='Merge-sort'></a>
-**1. Divide**
-
-**2. Conquer**
-
-<hr />
-
-## Quick-Sort<a id ='Quick-sort'></a>
-**1. Divide**
-
-**2. Conquer**
+_CopyRight &copy; Newlifehaonan.com_
