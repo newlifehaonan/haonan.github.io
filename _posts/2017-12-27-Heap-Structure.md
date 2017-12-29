@@ -20,7 +20,7 @@ comments: true
   * [MaxPQ](#MaxPQ)
   * [MinPQ](#MinPQ)
 * [Heap Structure Extension](#Extension)
-  * [Multiway Heap](#Mutiway)
+  * [Multiway Heap](#Multiway)
   * [resized Heap](#Resized)
   * [Index Heap](#Index)
 
