@@ -26,15 +26,15 @@ comments: true
 
 <hr />
 
-## <p name = "Defination">Binary-Heap Defination<p/>
+## <a name = "Defination">Binary-Heap Defination<a/>
 
 **_Binary Heap is a structure within which the order of items are following the pattern that each item as a node should have at most two child nodes and its parent node should always be either greater or smaller than itself. If greater, the heap is called Max Priority Queue, same, if smaller, the heap is called Min Priority Queue_**
 
 <hr />
 
-## <p name = "Type">Type of Heap<p/>
+## <a name = "Type">Type of Heap<a/>
 
-### <p name = "Type">1. MaxPQ<p/>
+### <a name = "Type">1. MaxPQ<a/>
 
 Application interface includes:
 * Constructor
@@ -137,7 +137,7 @@ public class MaxPQ<Key extends comparable<? super Key>>{
 }
 ```
 
-### <p name = "MinPQ">2.MinPQ<p/>
+### <a name = "MinPQ">2.MinPQ<a/>
 
 * Constructor
 
@@ -239,9 +239,9 @@ public class MinPQ<Key extends comparable<? super Key>>{
 }
 ```
 
-## <p name = "Extension">Heap Structure Extension<p/>
+## <a name = "Extension">Heap Structure Extension<a/>
 
-### <p name = "Multiway">1. Multiway Heap<p/>
+### <a name = "Multiway">1. Multiway Heap<a/>
 **_unlike binary heap, multiway heap increase each node's child from two to any number you want.The main modification of the code lies in `swim` and `sink` functions, specifically the algebra relation between parent and child nodes. Following is implementation of d-way-heap_**
 
 **_There is a little trick in the implementation of d-way-heap, we can use the bottom-down truncation character in java when two integers divided result in float point, for example, 1/3 and 2/3 both equals 0_**
@@ -311,7 +311,7 @@ public class MinPQ<Key extends comparable<? super Key>>{
 }
 ```
 
-### <p name = "Resized">2. Resized Heap<p/>
+### <a name = "Resized">2. Resized Heap<a/>
 **_The resized Heap is a heap with resizable capacity, which can increase the usage of memory_**
 ```java
 private void resize(int M){
@@ -345,7 +345,7 @@ public Key delmin(){
 
 ```
 
-### <p name = "Index">3. Index Heap<p/>
+### <a name = "Index">3. Index Heap<a/>
 **_Put a sequence if items with each has its own unique index into a priority queue, this heap extension enable user to save related information of an item to another list for the future retrieval and manipulation, it's something like key and value pair, we compare the value not the key!_**
 
 * Constructor
