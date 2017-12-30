@@ -33,3 +33,7 @@ comments: true
 * `git status`
 * `git commit --m "log"`
 * `git push`
+
+<hr>
+
+_CopyRight &copy;Newlifehaonan.com_

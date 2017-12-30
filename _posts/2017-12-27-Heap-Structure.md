@@ -507,3 +507,7 @@ public class IndexPQ<Key extends comparable<? super Key>>{
   }
 }
 ```
+
+<hr>
+
+_CopyRight &copy;Newlifehaonan.com_

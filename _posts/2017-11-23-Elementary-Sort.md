@@ -10,7 +10,7 @@ tag:
 description: Selection-Sort, Bubble-Sort,Insertion-Sort(Optimization), Shell-Sort
 comments: true
 ---
-# Sort-Algorithm
+# Elementary-Sort-Algorithm
 <hr />
 
 ## Appendix
