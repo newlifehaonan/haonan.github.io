@@ -191,7 +191,7 @@ public class MinPQ<Key extends comparable<? super Key>>{
     sink(1);
     //release the memory//
     PQ[N+1] = null;
-    return max;
+    return Min;
   }
 
   public Key min(){
