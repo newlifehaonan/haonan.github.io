@@ -8,3 +8,6 @@ tag:
 description: Linked-List
 comments: true
 ---
+# linked List
+
+<hr />
