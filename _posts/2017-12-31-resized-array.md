@@ -23,6 +23,7 @@ comments: true
   * `find(item A)`: return the index of item A.
   * `remove(item A)`: remove item A from array.
   * `resize(int N)`: private method for auto resizing.
+  
 ```java
 public class Arrays<item extends Comparable<? super item>>{
   private int initsize;
