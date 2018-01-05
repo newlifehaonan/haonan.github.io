@@ -5,7 +5,7 @@ date: 2017-12-31 11:30:20
 tag:
 - Java
 - data-structure
-description: Comparable,Comparator,Iterator in Java
+description: This article is a collection of both array and lined list implementation of Stack and Queue.
 comments: true
 ---
 
@@ -17,16 +17,20 @@ comments: true
 ## Appendix
 
 * [Stack](#Stack)
-
+  * [Array implementation](#arraystack)
+  * [Linked List Version](#llstack)
 * [Queue](#Queue)
-  * [single-way Queue](#single)
+  * [single-way Queue(Array)](#swqarray)
+  * [single-way Queue(Linked List)](#swqLL)
   * [double-ended Queue](#double)
-  * [circular queue](#circular)
 
 <hr />
 
 ### <a name="Stack">Stack<a />
-**_Stack is an application of linked list structure, items in the stack follow the "First In First Out" pattern._**
+**_Stack is an application of linear data structure, items in the stack follow the "First In First Out" pattern._**
+#### <a name="arraystack">1. Array implementation<a />
+
+#### <a name="llstack">2. Linked List Version<a />
 
 * Constructor
   * `node()`: object composes stack;
@@ -76,9 +80,59 @@ public class Stack<item extends Comparable<? super item>>{
 ```
 
 ### <a name="Queue">Queue<a />
-#### <a name="single">1. Single-way Queue<a />
+**_Queue is an application of linear data structure, items in the Queue follow the "First In Last Out" pattern._**
+#### <a name="single">1. Single-way Queue(Array)<a />
+**_Create a fixed sized array as a container of Queue and following the FILO pattern._**
 
-**_Queue is an application of linked list structure, items in the Queue follow the "First In Last Out" pattern._**
+```java
+public class Queue<item>{
+  private int N;
+  private item[] Q;
+  private int front = rear = -1;
+
+  public Queue(int size){
+    Q = new item[size];
+  }
+
+  public int capacity(){
+    return Q.length;
+  }
+
+  public boolean isEmpty(){
+    return front == rear == -1;
+  }
+
+  public boolean isFull(){
+    return (rear == size-1 && front == 0) ||(front == rear+1);
+  }
+
+  public void enqueue(item a){
+    if(isFull()) throw new IndexOutOfRange("Queue is Full !!");
+    if(rear == size-1 && front != 0){
+      rear = -1;
+    }
+    Q[++rear] = a;
+    if(front == -1){
+      front = 0;
+    }
+  }
+
+  public item dequeue(){
+    if(isEmpty()) throw new IndexOutOfRange("Queue is empty !!");
+    item out = Q[front];
+    if(front == size){
+      front = 0;
+    }
+    if(front-1 == rear){
+      front = rear = -1;
+    }
+  }
+}
+
+```
+
+#### <a name="single">2. Single-way Queue(Linked List)<a />
+
 * Constructor
   * `node()`: object composes stack;
   * `queue()`: FIFO lined list;
@@ -129,8 +183,7 @@ public class queue<item extends Comparable<? super item>>{
 }
 ```
 
-#### <a name="double">2. Double-way Queue<a />
+#### <a name="double">3. Double-way Queue<a />
 
-#### <a name="circular">3. Circular Queue<a />
 
 _CopyRight &copy;Newlifehaonan.com_

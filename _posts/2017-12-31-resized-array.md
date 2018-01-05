@@ -5,7 +5,7 @@ date: 2017-12-31 11:30:20
 tag:
 - Java
 - data-structure
-description: Resized array
+description: This article is about how to turning a fixed sized array to a autosized array.
 comments: true
 ---
 # Resized Array

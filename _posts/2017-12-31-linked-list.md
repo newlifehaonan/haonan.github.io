@@ -5,7 +5,7 @@ date: 2017-12-31 11:30:20
 tag:
 - Java
 - data-structure
-description: Stack, Queue, double way lined list.
+description: This article is a collections of 3 kinds of implementation of linked list includes single-way Linked List, double-way Linked List, circular Linked List.
 comments: true
 ---
 # Linked List
@@ -62,7 +62,7 @@ comments: true
         }
       }
 
-      public void insert_at_end(item a）{
+      public void insert_at_end(item a){
         Node NewNode = new Node();
         NewNode.data = a;
         NewNode.next = null;
@@ -154,7 +154,7 @@ public class CLL<item>{
       }
     }
 
-    public void insert_at_end(item a）{
+    public void insert_at_end(item a){
       Node NewNode = new Node();
       NewNode.data = a;
       if(first == null){
@@ -246,7 +246,7 @@ public class DLL<item>{
       }
     }
 
-    public void insert_at_end(item a）{
+    public void insert_at_end(item a){
       Node NewNode = new Node();
       NewNode.data = a;
       NewNode.next = null;
