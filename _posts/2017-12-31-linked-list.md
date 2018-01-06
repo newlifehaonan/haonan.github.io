@@ -3,7 +3,6 @@ layout: post
 title: "Linked-List"
 date: 2017-12-31 11:30:20
 tag:
-- Java
 - data-structure
 description: This article is a collections of 3 kinds of implementation of linked list includes single-way Linked List, double-way Linked List, circular Linked List.
 comments: true

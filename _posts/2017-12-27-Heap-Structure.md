@@ -3,8 +3,6 @@ layout: post
 title: "Heap Structure"
 date: 2017-12-27 11:30:20
 tag:
-- Java
-- algorithm
 - data-structure
 description: Heap (Priority Queue) and its Extension)
 comments: true

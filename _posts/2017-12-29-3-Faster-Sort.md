@@ -3,10 +3,7 @@ layout: post
 title: "3 Faster Sort Algorithms"
 date: 2017-11-29 15:17:00
 tag:
-- Java
-- algorithm
 - sort
-- data-structure
 description: Heap-Sort,Merge-Sort,Quick-Sort
 comments: true
 ---

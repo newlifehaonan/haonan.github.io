@@ -3,10 +3,7 @@ layout: post
 title: "4 Elementary Sort Algorithms"
 date: 2017-11-22 16:25:06
 tag:
-- Java
-- algorithm
 - sort
-- data-structure
 description: Selection-Sort, Bubble-Sort,Insertion-Sort(Optimization), Shell-Sort
 comments: true
 ---

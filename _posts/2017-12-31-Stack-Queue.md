@@ -3,7 +3,6 @@ layout: post
 title: "Stack and Queue"
 date: 2017-12-31 11:30:20
 tag:
-- Java
 - data-structure
 description: This article is a collection of both array and lined list implementation of Stack and Queue.
 comments: true
