@@ -23,7 +23,7 @@ comments: true
 
 <hr />
 
-## Definition
+## <a name ="Definition">Definition<a />
 
 **_A symbol table is a data structure for key-value pairs that supports two operations: insert (put) a new pair into the table and search for (get) the value associated with a given key.There are several conventions towards Key and Value when Implement symbol table_**
 
@@ -53,7 +53,7 @@ comments: true
 
 <hr />
 
-## Unordered Linked List ST
+## <a name="Sequential">Unordered Linked List ST<a />
 
 **_The Node uses to construct linked list has three value, one for key, one for value, and one for referring next node._**
 
@@ -167,7 +167,7 @@ public class SequentialST<Key extends Comparable<? super Key>,Value extends Comp
 
 <hr />
 
-## Ordered parallel array ST
+## <a name="Binary">Ordered parallel array ST<a />
 **_Use Binary search to get key and insert new key into ordered array_**
 ### API
 
