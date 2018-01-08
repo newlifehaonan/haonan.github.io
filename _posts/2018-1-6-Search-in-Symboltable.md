@@ -4,12 +4,12 @@ title: "Symbol table implementation"
 date: 2017-12-31 11:30:20
 tag:
 - data-structure
-- Search
+- search
 description: This article is a collection of search algorithm in symbol table using different data-structure.
 comments: true
 ---
 
-# Symbol Table
+# Symbol Table(ST)
 
 <hr />
 
@@ -17,13 +17,9 @@ comments: true
 
 * [Definition and Conventions](#Definition)
 
-* [API](#API)
+* [Unordered Linked List ST](#Sequential)
 
-* [Implement `Put` and `Get` method using different search method](#Implement)
-
-  * [Sequential Search(Linked List)](#Sequential)
-
-  * [Binary Search(Ordered, parallel array)](#Binary)
+* [Ordered parallel array ST](#Binary)
 
 <hr />
 
@@ -55,7 +51,125 @@ comments: true
 
   _3. a.equals(b) returns true if and only if a and b have the same length and are identical in each character position._
 
-## API
+<hr />
+
+## Unordered Linked List ST
+
+**_The Node uses to construct linked list has three value, one for key, one for value, and one for referring next node._**
+
+### API
+* Constructors
+
+  * For Linked list: `Node()` and `ST()`
+
+  * For parallel array `ST()`
+
+* Methods
+  * `size()`
+
+  * `isEmpty()`
+
+  * `contain(Key a)`
+
+  * `put(Key key, Value value)`
+
+  * `get(Key key)`
+
+  * `Delete(Key key)`
+
+  * `rank(Key key)` return how many keys that are less than key.
+
+### implementation
+
+```java
+public class SequentialST<Key extends Comparable<? super Key>,Value extends Comparable<? super Value>>{
+  private Node first;
+
+  /*Constructor*/
+  private class Node{
+    private Key key;
+    private Value val;
+    private Node next;
+
+    public Node(Key key, Value val){
+      this.key = key;
+      this.val = val;
+      this.next= next;
+    }
+  }
+
+  public SequentialST(){};
+
+  /*Size, isEmpty,contain method*/
+  public int size(){
+    return size(first);
+  }
+
+  private int size(Node x){
+    if(x == null) return 0;
+    return size(x.next) +1;
+  }
+
+  public boolean isEmpty(){
+    return first == null;
+  }
+
+  public boolean contain(Key key){
+    return get(key) != null;
+  }
+
+  /*Get, put, delete and rank method ( recursively)*/
+  public Value get(Key key){
+    Value val = get(first,key);
+  }
+
+  private Value get(Node x, Key key){
+    if(x == null) return null;
+    if(x.key.equals(key)) return x.value;
+    return get(x.next, key);
+  }
+
+  public void put(Key key, Value value){
+    first = put(Node x, Key key, Value value);
+  }
+
+  private Node put(Node x, Key key, Value value){
+    if(x == null) return new Node(key, value);
+    int cmp = x.key.compareTo(key);
+    if(cmp == 0) x.value = value;
+    else         x.next = put(x.next, key, value);
+    return x;
+  }
+
+  public void delete(Key key){
+    first = delete(first, key);
+  }
+
+  private Node delete(Node x, Key key){
+    if(x == null) return null;
+    if(x.key.equals(key)) {return x.next}
+    x.next = delete(x.next,key);
+    return x;
+  }
+
+  public int rank(Key key) {
+    return rank (first,key);
+  }
+
+  private int rank (Node x, Key key) {
+    if(x ==null) return 0;
+    int cmp = x.key.compareTo(key);
+    if(cmp>=0) return rank(x.next,key);
+    else		   return rank(x.next,key) +1;
+  }
+}
+```
+
+<hr />
+
+## Ordered parallel array ST
+**_Use Binary search to get key and insert new key into ordered array_**
+### API
 
 * Constructors
 
@@ -64,6 +178,7 @@ comments: true
   * For parallel array `ST()`
 
 * Methods
+  * `size()`
 
   * `isEmpty()`
 
@@ -87,8 +202,105 @@ comments: true
 
   * `ceiling(Key key)`: smallest key greater than or equal to key.
 
-## Implementation
+### implementation
 
-### Sequential Search(Linked List)
+```java
+public class BinarySearchST<Key extends Comparable<? super Key>,Value extends Comparable<? super Value>>{
+  private Key[] keys;
+  private Value[] vals;
+  private int N;
+  public BinarySearchST(int capacity){
+    keys = new Key[capacity];
+    vals = new Value[capacity];
+  }
 
-### Binary Search(parallel array)
+  public int size(){
+    return N;
+  }
+
+  public boolean isEmpty(){
+    return N==0;
+  }
+
+  public boolean contain(Key key){
+    return get(key != null);
+  }
+  public int rank(Key key){
+    rank(key,0,N-1);
+  }
+  private int rank(Key key, int lo, int hi){
+    if (hi < lo) return lo;
+    int mid = lo + (hi - lo) / 2;
+    int cmp = key.compareTo(keys[mid]);
+    if      (cmp < 0)
+         return rank(key, lo, mid-1);
+    else if (cmp > 0)
+         return rank(key, mid+1, hi);
+    else return mid;
+  }
+
+  public Value get(Key key){
+    if (isEmpty()) return null;
+    int i = rank(key);
+    if (i < N && keys[i].compareTo(key) == 0) return vals[i];
+    else                                      return null;
+  }
+
+  public void put(Key key, Value val){
+    int i = rank(key);
+    if (i < N && keys[i].compareTo(key) == 0){  vals[i] = val; return;}
+    if (N == keys.length) resize(2*keys.length);
+    for (int j = N; j > i; j--){keys[j] = keys[j-1]; vals[j] = vals[j-1];}
+    keys[i] = key; vals[i] = val;
+    N++;
+    }
+
+  public void delele(Key key, Value val){
+    if (isEmpty()) return;
+    int i = rank(key);
+    if (i < N && keys[i].compareTo(key) == 0){
+      for (int j = i; j < N-1; j++){
+        keys[i] = keys[i+1];
+        vals[i] = vals[i+1];
+      }
+      N--;
+      keys[N] = null;  // to avoid loitering
+      vals[N] = null;
+      if (N > 0 && N == keys.length/4) resize(keys.length/2);
+    }
+    else return;
+  }
+
+  public Key min() {
+
+    if (isEmpty()) return null;
+    return keys[0];
+  }
+
+  public Key max() {
+    if (isEmpty()) return null;
+    return keys[N-1];
+  }
+
+  public Key select(int k) {
+    if (k < 0 || k >= N) return null;
+    return keys[k];
+  }
+
+  public Key floor(K key) {
+    int i = rank(key);
+    if (i < N && key.compareTo(keys[i]) == 0) return keys[i];
+    if (i == 0) return null;
+    else return keys[i-1];
+  }
+
+  public Key ceiling(K key) {
+    int i = rank(key);
+    if (i == N) return null;
+    else return keys[i];
+  }
+}
+```
+
+
+_CopyRight &copy;Newlifehaonan.com_
