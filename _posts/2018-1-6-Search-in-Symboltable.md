@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Symbol table implementation"
-date: 2017-12-31 11:30:20
+date: 2018-1-6 11:30:20
 tag:
 - data-structure
 - search
