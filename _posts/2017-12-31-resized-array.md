@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Resized-array"
+title: "Resized-Array"
 date: 2017-12-31 11:30:20
 tag:
 - data-structure

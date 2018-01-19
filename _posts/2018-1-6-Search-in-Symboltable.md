@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Symbol table implementation"
+title: "Symbol Table Implementation"
 date: 2018-1-6 11:30:20
 tag:
 - data-structure
@@ -245,6 +245,17 @@ public class BinarySearchST<Key extends Comparable<? super Key>,Value extends Co
     if (i < N && keys[i].compareTo(key) == 0) return vals[i];
     else                                      return null;
   }
+
+  private void resize(int size) {
+		Key[] tempkeys = (Key[])(new Comparable[size]);
+		Value[] tempvals = (Value[])(new Object[size]);
+		for(int i =0; i < keys.length; i++) {
+			tempkeys[i] = keys[i];
+			tempvals[i] = vals[i];
+		}
+		keys = tempkeys;
+		vals = tempvals;
+	}
 
   public void put(Key key, Value val){
     int i = rank(key);

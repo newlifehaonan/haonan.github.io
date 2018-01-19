@@ -36,6 +36,14 @@ comments: true
 
   * [Ranged Queries]
 
+* Iteration Orde
+
+  * Post Order traversal
+
+  * In Order traversal
+
+  * Pre Order traversal
+
 <hr />
 
 ## Binary Search Tree Definition
@@ -219,7 +227,7 @@ public int rank(Key key){
   return rank(root, key);
 }
 
-public int rank(Node x, Key key){
+private int rank(Node x, Key key){
   if(x =null) return 0;
   int cmp = x.key.compareTo(key);
   if (cmp == 0) return size(x.left)
@@ -270,8 +278,8 @@ public void delete(Key key){
 private Node delete(Node x, Key key){
   if(x == null) return null;
   int cmp = x.key.compareTo(key);
-  if(cmp < 0) delete(x.right, key);
-  else if (cmp >0) delete(x.left,key);
+  if(cmp < 0) x.right = delete(x.right, key);
+  else if (cmp >0) x.left = delete(x.left,key);
   else
   {
   if(x.left == null) return x.right;
@@ -284,3 +292,83 @@ private Node delete(Node x, Key key){
   return x
 }
 ```
+
+### Range Queries.
+
+**_Return the key between lower bound and higher bound, Use iterable interface to build the keys function_**
+
+```java
+//return the BTS in order
+public Iterable<Key> keys(){
+  return keys(min(),max());
+}
+
+public Iterable<Key> keys(int lo, int hi){
+  Queue<Key> queue = new Queue<Key>();
+  keys(root, queue, lo, hi);
+  return queue;
+}
+
+public Iterable<Key> keys(Node x, Queue<Key> queue, int lo, int hi){
+  if(x==null) return
+  int cmplo = lo.compareTo(x.key);
+  int cmphi = hi.compareTo(x.key);
+  if(cmplo < 0) keys(x.left, queue,lo, hi);
+  if(cmplo <= 0 && cmphi >= 0) queue.enqueue(x.key);
+  if(cmphi >0) keys(x.right, queue,lo,hi);
+}
+```
+
+<hr />
+
+## Iteration Order
+
+### Post Order
+**_process left subtree first, then right subtree, finally root itself_**
+
+
+### In Order
+**_process left subtree first, then root itself, finally right subtree_**
+
+1. recursive method
+
+_To implement Iterable function recursively, we use queue as the container to hold the key_
+
+```java
+public Iterable<Key> keysinorder(){
+  Queue<Key> q = new Queue<Key>();
+  return keysinorder(root,q);
+}
+
+private Iterable<Key> keysinorder(Node x, Queue q){
+  if(x == null) return q;
+  q = keysinorder(x.left, q);
+  q.enqueue(x.key);
+  q = keysinorder(x.right,q);  
+}
+```
+
+2. Using stack
+
+```java
+public Iterable<Key> keysinorder(Node x){
+  ArrayList<Key> out = new ArrayList();
+  if(x == null) return out;
+  Stack<Key> stack = new Stack<Key>();
+  Node p = x;
+  while(!stack.isEmpty() || p != null){
+    if(p != null){
+      stack.push(p.key);
+      p = p.left;
+    }else{
+      Node t = stack.pop();
+      out.add(t.key);
+      p = p.right
+    }
+  }
+}
+```
+
+
+### Pre Order
+**_process root itself first, then left subtree, finally right subtree_**
