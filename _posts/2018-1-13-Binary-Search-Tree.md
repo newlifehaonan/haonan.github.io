@@ -14,44 +14,44 @@ comments: true
 
 ## Appendix
 
-* [BinarySearchTree Definition]
+* [BinarySearchTree Definition](#BST)
 
-  * [Definition]
+  * [Definition](#Definition)
 
-  * [Structure Implementation]
+  * [Structure Implementation](#Implementation)
 
-* [Implementation of BST]
+* [Implementation of BST](#IBST)
 
-  * [Size,Height]
+  * [Size,Height](#SH)
 
-  * [Get, Put]
+  * [Get, Put](#GP)
 
-  * [Max, Min]
+  * [Max, Min](#MM)
 
-  * [Floor, Ceiling]
+  * [Floor, Ceiling](#FC)
 
-  * [Rank, Select]
+  * [Rank, Select](#RS)
 
-  * [Delete]
+  * [Delete](#D)
 
-  * [Ranged Queries]
+  * [Ranged Queries](#RQ)
 
-* Iteration Orde
+* [Iteration Order](#IO)
 
-  * Post Order traversal
+  * [Post Order traversal](#POT)
 
-  * In Order traversal
+  * [In Order traversal](#IOT)
 
-  * Pre Order traversal
+  * [Pre Order traversal](#POT)
 
 <hr />
 
-## Binary Search Tree Definition
+## <a name ="BST">Binary Search Tree Definition<a/>
 
-### Definition
+### <a name ="Definition">Definition<a/>
 **_BST is a Linked Structure composed by Node structure, which contains a Comparable Key and two referenced Node called left Node and right Node.All the key of left child node have to be less than it's parent, and all the key of right child node have to be larger than it's parent._**
 
-### Implement.
+### <a name ="Implementation">Implement<a/>
 ```java
 public class BST<Key extends Comparable<? super Key>,Value extends Comparable<? super Value>>{
   private Node root;
@@ -73,9 +73,9 @@ _Following Implementation are based on this class._
 
 <hr />
 
-## Implementation of BST
+## <a name ="IBST">Implementation of BST<a/>
 
-### Size & Height
+### <a name ="SH">Size & Height<a/>
 
 **_Recursively build those two methods. For Size, Size(Root) = Size(Left) + Size(right) + 1. For Height, Height(Root) = Max(height(left),height(right)) + 1_**
 
@@ -108,7 +108,7 @@ private int height(Node x){
 }
 ```
 
-### Get & Put
+### <a name ="GP">Get & Put<a/>
 
 1. Get
 
@@ -147,7 +147,7 @@ private Node put(Node x, Key key, Value val){
 }
 ```
 
-### Max & Min
+### <a name ="MM">Max & Min<a/>
 
 **_The node which is in the leftmost part of the tree has Min key; The node which is in the rightmost part of the tree has MAX key_**
 
@@ -172,7 +172,7 @@ private Value min(Node x){
   return min(x.right);
 }
 ```
-### floor & ceiling
+### <a name ="FC">floor & ceiling<a/>
 
 1. floor
 
@@ -216,7 +216,7 @@ private Node Ceiling(Node x, Key key){
 }
 ```
 
-### Rank & Select
+### <a name ="RS">Rank & Select<a/>
 
 1. Rank
 
@@ -254,7 +254,7 @@ private Key select(Node x,int s){
 
 ```
 
-### Delete
+### <a name ="D">Delete<a/>
 
 **_Following the step to do the delete_**
 
@@ -293,7 +293,7 @@ private Node delete(Node x, Key key){
 }
 ```
 
-### Range Queries.
+### <a name ="RQ">Range Queries<a/>
 
 **_Return the key between lower bound and higher bound, Use iterable interface to build the keys function_**
 
@@ -321,13 +321,13 @@ public Iterable<Key> keys(Node x, Queue<Key> queue, int lo, int hi){
 
 <hr />
 
-## Iteration Order
+## <a name ="IO">Iteration Order<a/>
 
-### Post Order
+### <a name ="PQT">Post Order<a/>
 **_process left subtree first, then right subtree, finally root itself_**
 
 
-### In Order
+### <a name ="IOT">In Order<a/>
 **_process left subtree first, then root itself, finally right subtree_**
 
 1. recursive method
@@ -370,5 +370,5 @@ public Iterable<Key> keysinorder(Node x){
 ```
 
 
-### Pre Order
+### <a name ="POT">Pre Order<a/>
 **_process root itself first, then left subtree, finally right subtree_**
