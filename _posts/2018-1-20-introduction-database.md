@@ -3,7 +3,7 @@ layout: post
 title: "Introduction to Oracle Database"
 date: 2018-1-6 11:30:20
 tag:
-- Database
+- database
 description: relational model, schema, sql/plsql, transaction, architecture
 comments: true
 ---
