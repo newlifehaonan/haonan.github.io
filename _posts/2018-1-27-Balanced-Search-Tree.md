@@ -61,4 +61,4 @@ public class 3_Node<Key, Value>{
 
 ## Insert Scenario 1: Insert into 2-node.
 
-![insert_into_2](/Users/harrychen/Desktop/newlifehaonan.github.io/assets/images/insert2.png);
+![insert_into_2](https://github.com/newlifehaonan/newlifehaonan.github.io/blob/master/assets/images/insert2.png);

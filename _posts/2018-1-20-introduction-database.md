@@ -157,4 +157,4 @@ DBMS based on relational model
 
   * Tablespaces:A database is divided into logical storage units called tablespaces. A tablespace is the logical container for a segment. Each tablespace contains at least one data file.
 
-  ![assets/images/logical_storage.png](/Users/harrychen/Desktop/newlifehaonan.github.io/assets/images/logical_storage.png)
+  ![assets/images/logical_storage.png](https://github.com/newlifehaonan/newlifehaonan.github.io/blob/master/assets/images/logical_storage.png);
