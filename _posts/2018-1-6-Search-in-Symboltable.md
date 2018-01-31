@@ -159,8 +159,8 @@ public class SequentialST<Key extends Comparable<? super Key>,Value extends Comp
   private int rank (Node x, Key key) {
     if(x ==null) return 0;
     int cmp = x.key.compareTo(key);
-    if(cmp>=0) return rank(x.next,key);
-    else		   return rank(x.next,key) +1;
+    if(cmp>=0) return rank(x.next, key);
+    else		   return rank(x.next, key) +1;
   }
 }
 ```

@@ -5,7 +5,7 @@ date: 2018-1-6 11:30:20
 tag:
 - data-structure
 - search
-description: 2-3 Tree, Red-Black Tree, AVL Tree, B Tree
+description: 2-3 Tree, Red-Black Tree
 comments: true
 ---
 # Balanced Search Tree
@@ -19,10 +19,6 @@ comments: true
 * [2-3 Tree](#23)
 
 * [Red-Black Tree](#RB)
-
-* [AVL Tree](#AVL)
-
-* [B Tree](#BT)
 
 <hr >
 
@@ -182,7 +178,7 @@ private Node 4to2(Node x, Key key, Value val){
 
 ```java
 public class Node<Key, Value>{
-  private boolean type;
+  private boolean color;
   private Key key;
   private Value val;
   public 2_Node<Key,Value>(Key key, Value val, boolean type){
@@ -196,38 +192,75 @@ public class Node<Key, Value>{
 ```
 
 ## Rotation
-![rotateleft]({{'assets/images/rotateleft.png' | relative_url}}){: .center-image };
+**To keep the red link leans left, We need to write two rotate functions.**
 
-![rotateright]({{'assets/images/rotateright.png' | relative_url}}){: .center-image };
+![rotateleft]({{'assets/images/rotateleft.png' | relative_url}}){: .center-image }
 
 ```java
 public void rotateleft(Node x){
-
+  Node x = h.right;
+  h.right = x.left;
+  x.left = h;
+  x.color = h.color;
+  h.color = RED;
+  return x;
 }
 
-public void rotateright(Node x){
+```
 
+![rotateright]({{'assets/images/rotateright.png' | relative_url}}){: .center-image }
+
+```java
+public void rotateright(Node x){
+  Node x = h.left;
+  h.left = x.right;
+  x.right = h;
+  x.color = h.color;
+  h.color = RED;
+  return x;
 }
 ```
 
 ## Insert into a single 2-node.
 
-![RB2]({{'assets/images/RB2.png' | relative_url}}){: .center-image };
+![RB2]({{'assets/images/RB2.png' | relative_url}}){: .center-image }
 
 ## Insert into a 3-node.
 
-![RB3]({{'assets/images/RB3.png' | relative_url}}){: .center-image };
+![RB3]({{'assets/images/RB3.png' | relative_url}}){: .center-image }
 
 ```java
+private void flipColors(Node h){
+  h.color = RED;
+  h.left.color = BLACK;
+  h.right.color = BLACK;
+}
 
+public void put(Key key, Value val){
+  root = put(root, key, val);
+  root.color = BLACK;
+}
+
+private Node put(Node h, Key key, Value val){
+  if (h == null)  // Do standard insert, with red link to parent.
+  return new Node(key, val, 1, RED);
+  int cmp = key.compareTo(h.key);
+  if      (cmp < 0) h.left  = put(h.left,  key, val);
+  else if (cmp > 0) h.right = put(h.right, key, val);
+  else h.val = val;
+  // make the tree balance//
+  if (h.right.color == RED && h.left.color == BLACK)    h = rotateLeft(h);
+  if (h.left.color == RED && h.left.left.color == RED) h = rotateRight(h);
+  if (h.left.color == RED && h.right.color == RED)     flipColors(h);
+  return h;
+}
 ```
 
-<hr />
+## DeleteMin
 
-# <a name = "AVL">AVL Tree<a />
+## DeleteMax
 
-<hr />
+## Delete
 
-# <a name = "BT">B Tree<a />
 
 <hr />
