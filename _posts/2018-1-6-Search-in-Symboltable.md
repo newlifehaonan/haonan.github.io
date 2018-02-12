@@ -307,6 +307,7 @@ public class BinarySearchST<Key extends Comparable<? super Key>,Value extends Co
 
   public Key ceiling(K key) {
     int i = rank(key);
+    if (i < N && key.compareTo(keys[i]) == 0) return keys[i];
     if (i == N) return null;
     else return keys[i];
   }

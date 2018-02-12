@@ -197,7 +197,7 @@ public class Node<Key, Value>{
 ![rotateleft]({{'assets/images/rotateleft.png' | relative_url}}){: .center-image }
 
 ```java
-public void rotateleft(Node x){
+public void rotateleft(Node h){
   Node x = h.right;
   h.right = x.left;
   x.left = h;
@@ -211,7 +211,7 @@ public void rotateleft(Node x){
 ![rotateright]({{'assets/images/rotateright.png' | relative_url}}){: .center-image }
 
 ```java
-public void rotateright(Node x){
+public void rotateright(Node h){
   Node x = h.left;
   h.left = x.right;
   x.right = h;
