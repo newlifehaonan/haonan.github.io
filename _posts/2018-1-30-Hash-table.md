@@ -121,6 +121,7 @@ public class Transaction
 <hr />
 
 ### Separate Chaining
+![sc]({{'assets/images/sc.png' | relative_url}}){: .center-image };
 
 **Create a array with each address reference to a linked list (symbol table), if collision happens add them to the symbol table**
 
@@ -161,6 +162,7 @@ public class SeperateChainingHashSet<TKey, TValue>
 ```
 
 ### linear probing
+![lp]({{'assets/images/lp.png' | relative_url}}){: .center-image };
 
 **The simplest open-addressing method is called linear probing: when there is a colli- sion (when we hash to a table index that is already occupied with a key different from the search key), then we just check the next entry in the table (by incrementing the index). Linear probing is characterized by identifying three possible outcomes:**
 * Key equal to search key: search hit

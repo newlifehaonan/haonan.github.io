@@ -147,7 +147,7 @@ public class quicksort<Key extends comparable<? super Key>>{
     conquer(a,0,a.length -1);
   }
 
-  public static void con quer(Key[] a, int lo, int hi){
+  public static void conquer(Key[] a, int lo, int hi){
     if(lo >= hi) return;
     int j = partition(a, lo, hi);
     conquer(a, lo, j-1);

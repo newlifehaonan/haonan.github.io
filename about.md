@@ -13,4 +13,4 @@ title: About
 
 ✅SAS, SPSS, R, Gephi
 
-✅Android, IOS
+✅Angular, Django
