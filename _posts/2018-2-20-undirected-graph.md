@@ -26,18 +26,21 @@ comments: true
 
 * Bipartite graph
 
+<hr />
 
 ## Graph Glossary
 
 | Term           | Definition                                                  |
-| :------------- | :------------- |
-| Graph          | A graph is a set of vertices and a collection of edges that each connect a pair of vertices.                                                    |
+| :-------------: | :-------------:|
+| Graph          | A graph is a set of vertices and a collection of edges that each connect a pair of vertices.|
 | simple Graph   | A graph with no self-loop and no parallel edges             |
 | Path           | Path in a graph is a sequence of vertices connected by edges, the length of Path is number of edges |
 | Cycle          | A cycle is a path with at least one edge whose first and last vertices are the same     |
 | Connected Graph|A graph is connected if there is a path from every vertex to every other vertex in the graph.|
 | Acyclic Graph| An acyclic graph is a graph with no cycles|
 | bipartite Graph       |a bipartite Graph is a graph whose vertices we can divide into two sets such that all edges connect a vertex in one set with a vertex in the other set.      |
+
+<hr />
 
 ## Graph API
 
@@ -138,6 +141,8 @@ public int hasLoops(Graph G){
 }
 ```
 
+<hr />
+
 ## Search
 
 **Find a path from v to w in a graph, record each vertices in the path.**
@@ -225,6 +230,8 @@ public class BFS{
 }
 ```
 
+<hr />
+
 ## Connected Component.
 
 **This class is used for detect how many components in a graph**
@@ -269,6 +276,9 @@ public class CC{
   {  return count;  }
 }
 ```
+
+<hr />
+
 ## Bipartite Graph
 
 **vertices who have same color can't be connected together**
@@ -306,3 +316,4 @@ public class Bipartite{
   {  return isTwoColorable;  }
 }
 ```
+<hr />

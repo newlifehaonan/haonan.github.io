@@ -30,16 +30,21 @@ comments: true
 
 * Strong connected graph
 
+<hr />
+
 ## Digraph Glossary
+
 | Term | Definition    |
-| :------------- | :------------- |
-| Directed Graph       | A directed graph (or digraph) is a set of vertices and a collection of directed edges. directed edge points from the first vertex in the pair and points to the second vertex in the pair      |
-| OutDegree     | The OutDegree of a vertex in a digraph is the number of edges going from it     |
-| InDegree | the InDegree of a vertex is the number of edges going to it |
-| directed path       |  a sequence of vertices in which there is a (directed) edge pointing from each vertex in the sequence to its successor in the sequence       |
+| :-------------: | :-------------: |
+| Directed Graph       | A directed graph (or digraph) is a set of vertices and a collection of directed edges. directed edge points from the first vertex in the pair and points to the second vertex in the pair.      |
+| OutDegree     | The OutDegree of a vertex in a digraph is the number of edges going from it.     |
+| InDegree | the InDegree of a vertex is the number of edges going to it. |
+| directed path       |  a sequence of vertices in which there is a (directed) edge pointing from each vertex in the sequence to its successor in the sequence.       |
 | directed cycle     | a directed path with at least one edge whose first and last vertices are the same.     |
 |directed acyclic graph (DAG)|A directed acyclic graph (DAG) is a digraph with no directed cycles.|
 |strongly connected|Two vertices v and w are strongly connected if they are mutually reachable.  A digraph is strongly connected if all its vertices are strongly connected to one another.|
+
+<hr />
 
 ## Digraph
 ```java
@@ -81,6 +86,9 @@ public class Digraph{
   }
 
 ```
+<hr />
+
+## Digraph traversal
 
 ### Directed DFS
 ```java
@@ -214,6 +222,7 @@ public class BreadthFirstDirectedPaths {
 	}
 }
 ```
+<hr />
 
 ## DAGS(Directed acyclic graph)
 
@@ -263,6 +272,7 @@ public class DAG {
 
 }
 ```
+<hr />
 
 ## Depth First Order
 
@@ -308,6 +318,8 @@ public class DepthFirstOrder
 
 ```
 
+<hr />
+
 ## Topological sort
 
 **Precedence-constrained scheduling amounts to computing a topological order for the vertices of a DAG**
@@ -338,6 +350,8 @@ public class Topological
   {  return order == null; }
 }
 ```
+
+<hr />
 
 ## Strong connected graph.
 **Compute CC on a reversePost order of a reverse graph of the original graph**
@@ -381,3 +395,4 @@ public KosarajuSCC(Digraph G)
 }
 
 ```
+<hr />
