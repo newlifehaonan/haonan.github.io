@@ -208,7 +208,7 @@ private Node Ceiling(Node x, Key key){
   if(x == null) return null;
   int cmp = x.key.compareTo(key);
   if(cmp == 0) return x;
-  if(cmp >0) return Ceiling(x.right,key);
+  if(cmp <0) return Ceiling(x.right,key);
   else
   Node t = Ceiling(x.left,key);
   if(t!=null) return t;
